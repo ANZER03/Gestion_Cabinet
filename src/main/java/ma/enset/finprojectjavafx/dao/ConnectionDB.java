@@ -1,4 +1,4 @@
-package ma.enset.finprojectjavafx.ConnectionDB;
+package ma.enset.finprojectjavafx.dao;
 
 import java.sql.*;
 
@@ -10,9 +10,9 @@ public class ConnectionDB {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             connection = DriverManager.getConnection(
-                    "jdbc:mysql://localhost:3306/bdcc_tp1_cr",
+                    "jdbc:mysql://localhost:3306/gestion_consultation",
                     "root", "anoirzerrik2003");
-            connection.setAutoCommit(false);
+            connection.setAutoCommit(true);
         } catch (ClassNotFoundException | SQLException e) {
             throw new RuntimeException(e);
         }

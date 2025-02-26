@@ -1,0 +1,92 @@
+.root {
+    -fx-font-family: 'Segoe UI', Arial, sans-serif;
+    -fx-background-color: #f4f6f9;
+}
+
+.sidebar {
+    -fx-background-color: #343a40;
+    -fx-padding: 10;
+}
+
+.sidebar-btn {
+    -fx-background-color: #495057;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-pref-width: 150px;
+    -fx-alignment: CENTER_LEFT;
+}
+
+.sidebar-btn:hover {
+    -fx-background-color: #6c757d;
+}
+
+.search-bar {
+    -fx-background-color: #ffffff;
+    -fx-padding: 10;
+    -fx-border-color: #dee2e6;
+    -fx-border-width: 0 0 1 0;
+}
+
+.vbox {
+    -fx-background-color: #ffffff;
+}
+
+.input-section {
+    -fx-background-color: #ffffff;
+    -fx-padding: 15;
+    -fx-border-color: #dee2e6;
+    -fx-border-width: 0 0 0 0;
+}
+
+.button {
+    -fx-background-color: #007bff;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-padding: 5 15;
+    -fx-background-radius: 5;
+}
+
+.button:hover {
+    -fx-background-color: #0056b3;
+}
+
+.btn-danger {
+    -fx-background-color: #dc3545;
+}
+
+.btn-danger:hover {
+    -fx-background-color: #bd2130;
+}
+
+.text-field, .date-picker, .combo-box {
+    -fx-border-color: #ced4da;
+    -fx-border-radius: 5;
+    -fx-background-color: #ffffff;
+    -fx-padding: 5;
+}
+
+.table-view {
+    -fx-background-color: white;
+    -fx-border-color: #dee2e6;
+}
+
+.table-view .column-header {
+    -fx-background-color: #e9ecef;
+    -fx-font-weight: bold;
+}
+
+.table-row-cell:odd {
+    -fx-background-color: #f8f9fa;
+}
+
+.table-row-cell:selected {
+    -fx-background-color: #007bff;
+    -fx-text-fill: white;
+}
+
+.title {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-font-family: "Arial";
+    -fx-text-fill: #2c3e50;
+}

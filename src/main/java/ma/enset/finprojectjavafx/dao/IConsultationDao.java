@@ -1,4 +1,6 @@
 package ma.enset.finprojectjavafx.dao;
 
-public interface IConsultationDao {
+import ma.enset.finprojectjavafx.Entities.Consultation;
+
+public interface IConsultationDao extends Doa<Consultation, Long>{
 }

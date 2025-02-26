@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane stylesheets="@style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ma.enset.finprojectjavafx.MainController">
+
+    <left>
+        <VBox spacing="10" styleClass="sidebar">
+            <Button onAction="#handlePatientsButtonClick" styleClass="sidebar-btn" text="Patients">
+<!--                <graphic>-->
+<!--                    <ImageView>-->
+<!--                        <Image url="@patient-icon.png" />-->
+<!--                    </ImageView>-->
+<!--                </graphic>-->
+            </Button>
+            <Button onAction="#handleConsultationsButtonClick" styleClass="sidebar-btn" text="Consultations">
+<!--                <graphic>-->
+<!--                    <ImageView>-->
+<!--                        <Image url="@consultation-icon.png" />-->
+<!--                    </ImageView>-->
+<!--                </graphic>-->
+            </Button>
+        </VBox>
+    </left>
+    <center>
+        <StackPane fx:id="contentArea" prefHeight="600" prefWidth="834.0" />
+    </center>
+</BorderPane>
