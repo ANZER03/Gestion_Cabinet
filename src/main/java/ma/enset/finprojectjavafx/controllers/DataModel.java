@@ -1,4 +1,4 @@
-package ma.enset.finprojectjavafx;
+package ma.enset.finprojectjavafx.controllers;
 
 
 import javafx.collections.FXCollections;

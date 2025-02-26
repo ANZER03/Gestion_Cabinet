@@ -2,19 +2,17 @@ package ma.enset.finprojectjavafx.service;
 
 import ma.enset.finprojectjavafx.Entities.Consultation;
 import ma.enset.finprojectjavafx.Entities.Patient;
-import ma.enset.finprojectjavafx.dao.ConsultaionDao;
 import ma.enset.finprojectjavafx.dao.IConsultationDao;
 import ma.enset.finprojectjavafx.dao.IPatientDao;
-import ma.enset.finprojectjavafx.dao.PatientDao;
 
 import java.sql.SQLException;
 import java.util.List;
 
-public class cabinetService implements ICabinetService{
+public class CabinetService implements ICabinetService{
     private IPatientDao patientDao;
     private IConsultationDao consultationDao;
 
-    public cabinetService(IPatientDao patientDao, IConsultationDao consultationDao) {
+    public CabinetService(IPatientDao patientDao, IConsultationDao consultationDao) {
         this.patientDao = patientDao;
         this.consultationDao = consultationDao;
     }

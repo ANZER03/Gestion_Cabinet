@@ -9,10 +9,10 @@ import javafx.stage.Stage;
 public class MainApp extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
-        FXMLLoader loader = new FXMLLoader(MainApp.class.getResource("main.fxml"));
+        FXMLLoader loader = new FXMLLoader(MainApp.class.getResource("/ma/enset/finprojectjavafx/main.fxml"));
         Parent root = loader.load();
         Scene scene = new Scene(root);
-        scene.getStylesheets().add(MainApp.class.getResource("style.css").toExternalForm());
+        scene.getStylesheets().add(MainApp.class.getResource("/ma/enset/finprojectjavafx/style.css").toExternalForm());
         primaryStage.setScene(scene);
         primaryStage.setTitle("Cabinet Management");
         primaryStage.show();

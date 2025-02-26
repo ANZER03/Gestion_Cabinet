@@ -9,4 +9,6 @@ module ma.enset.finprojectjavafx {
     opens ma.enset.finprojectjavafx.Entities to javafx.base;
 //    exports ma.enset.finprojectjavafx.controllers to javafx.fxml;
     exports ma.enset.finprojectjavafx to javafx.fxml, javafx.graphics;
+    exports ma.enset.finprojectjavafx.controllers to javafx.fxml, javafx.graphics;
+    opens ma.enset.finprojectjavafx.controllers to javafx.fxml;
 }

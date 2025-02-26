@@ -12,7 +12,7 @@ public class ServiceTest {
 
     public static void main(String[] args) {
 
-        ICabinetService cabinetService = new cabinetService(new PatientDao() , new ConsultaionDao());
+        ICabinetService cabinetService = new CabinetService(new PatientDao() , new ConsultaionDao());
 
 //        Patient patient = cabinetService.getPatientById(cabinetService.getALlPatients().get(1).getId_patient());
 
