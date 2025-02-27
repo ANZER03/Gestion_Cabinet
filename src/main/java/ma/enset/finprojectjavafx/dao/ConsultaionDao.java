@@ -11,6 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ConsultaionDao implements IConsultationDao {
+    private final IPatientDao patientDao = new PatientDao();
     @Override
     public void create(Consultation consultation) throws SQLException {
         Connection connection = ConnectionDB.getConnection();
@@ -36,6 +37,7 @@ public class ConsultaionDao implements IConsultationDao {
         preparedStatement.setDate(1, consultation.getDate());
         preparedStatement.setString(2, consultation.getDescription());
         preparedStatement.setLong(3, consultation.getPatient().getId_patient());
+        preparedStatement.setLong(4 , consultation.getId_consultation());
         preparedStatement.executeUpdate();
     }
 
@@ -52,6 +54,8 @@ public class ConsultaionDao implements IConsultationDao {
             consultation.setDate(resultSet.getDate("date"));
             consultation.setDescription(resultSet.getString("description"));
             consultation.setId_consultation(resultSet.getLong("id_consultation"));
+
+            consultation.setPatient(patientDao.findById(resultSet.getLong("id_patient")));
             consultations.add(consultation);
         }
 
@@ -71,6 +75,7 @@ public class ConsultaionDao implements IConsultationDao {
             consultation.setId_consultation(resultSet.getLong("id_consultation"));
             consultation.setDate(resultSet.getDate("date"));
             consultation.setDescription(resultSet.getString("description"));
+            consultation.setPatient(patientDao.findById(resultSet.getLong("id_patient")));
             return consultation;
 
         }

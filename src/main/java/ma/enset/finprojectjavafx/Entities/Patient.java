@@ -60,11 +60,6 @@ public class Patient {
 
     @Override
     public String toString() {
-        return "Patient{" +
-                "id_patient=" + id_patient +
-                ", nom='" + nom + '\'' +
-                ", prenom='" + prenom + '\'' +
-                ", tel='" + tel + '\'' +
-                '}';
+        return (this.id_patient + " - " + this.nom + " " + this.prenom);
     }
 }

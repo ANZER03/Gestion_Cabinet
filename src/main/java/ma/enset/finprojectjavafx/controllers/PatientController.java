@@ -48,15 +48,15 @@ public class PatientController {
             dataModel.setPatients(FXCollections.observableArrayList());
         }
 
-        for (Patient p : cabinetService.getALlPatients()) {
-            Patient patient = new Patient();
-            patient.setId_patient(p.getId_patient());
-            patient.setNom(p.getNom());
-            patient.setPrenom(p.getPrenom());
-            patient.setTel(p.getTel());
-            System.out.println(p);
-            dataModel.getPatients().add(patient);
-        }
+//        for (Patient p : cabinetService.getALlPatients()) {
+//            Patient patient = new Patient();
+//            patient.setId_patient(p.getId_patient());
+//            patient.setNom(p.getNom());
+//            patient.setPrenom(p.getPrenom());
+//            patient.setTel(p.getTel());
+//            System.out.println(p);
+//            dataModel.getPatients().add(patient);
+//        }
 
         // Fix the property name to match your model
         idCol.setCellValueFactory(new PropertyValueFactory<>("id_patient"));
