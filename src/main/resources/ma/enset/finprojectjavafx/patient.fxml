@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ComboBox?>
-<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
@@ -15,10 +13,10 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.geometry.Insets?>
 
-<BorderPane prefHeight="600.0" prefWidth="834.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ma.enset.finprojectjavafx.controllers.ConsultationController">
+<BorderPane prefHeight="600.0" prefWidth="834.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ma.enset.finprojectjavafx.controllers.PatientController">
     <top>
         <HBox alignment="CENTER_LEFT" styleClass="p-3">
-            <Label text="Consultation Management" styleClass="title" />
+            <Label text="Patient Management" styleClass="title" />
         </HBox>
     </top>
     <center>
@@ -29,7 +27,7 @@
             <children>
                 <VBox styleClass="card" HBox.hgrow="NEVER" prefWidth="350.0">
                     <children>
-                        <Label text="Consultation Details" styleClass="subtitle">
+                        <Label text="Patient Information" styleClass="subtitle">
                             <padding>
                                 <Insets bottom="15" />
                             </padding>
@@ -52,12 +50,12 @@
                             <children>
                                 <Label text="ID:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
                                 <TextField fx:id="idField" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="0" />
-                                <Label text="Date:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
-                                <DatePicker fx:id="datePicker" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                                <Label text="Description:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
-                                <TextField fx:id="descriptionField" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                                <Label text="Patient:" GridPane.columnIndex="0" GridPane.rowIndex="3" />
-                                <ComboBox fx:id="patientComboBox" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                <Label text="Nom:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                                <TextField fx:id="nomField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                <Label text="Prénom:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                                <TextField fx:id="prenomField" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                <Label text="Tel:" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+                                <TextField fx:id="telField" GridPane.columnIndex="1" GridPane.rowIndex="3" />
 
                                 <!-- 2x2 Grid for CRUD buttons -->
                                 <GridPane hgap="10" vgap="10" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.rowIndex="4">
@@ -71,10 +69,9 @@
                                     </rowConstraints>
                                     <children>
                                         <Button fx:id="newBtn" onAction="#clear" text="Clear" styleClass="btn-secondary" maxWidth="Infinity" GridPane.columnIndex="0" GridPane.rowIndex="0" />
-                                        <Button fx:id="createBtn" onAction="#createConsultation" text="Create" styleClass="btn-success" maxWidth="Infinity" GridPane.columnIndex="1" GridPane.rowIndex="0" />
-                                        <Button fx:id="updateBtn" disable="true" onAction="#updateConsultation" text="Update" maxWidth="Infinity" GridPane.columnIndex="0" GridPane.rowIndex="1" />
-                                        <Button fx:id="deleteBtn" disable="true" onAction="#deleteConsultation" styleClass="btn-danger" text="Delete" maxWidth="Infinity" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-
+                                        <Button fx:id="createBtn" onAction="#createPatient" text="Create" styleClass="btn-success" maxWidth="Infinity" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                                        <Button fx:id="updateBtn" disable="true" onAction="#updatePatient" text="Update" maxWidth="Infinity" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                                        <Button fx:id="deleteBtn" disable="true" onAction="#deletePatient" styleClass="btn-danger" text="Delete" maxWidth="Infinity" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                                     </children>
                                 </GridPane>
                             </children>
@@ -84,15 +81,15 @@
                 <VBox HBox.hgrow="ALWAYS" spacing="0">
                     <VBox styleClass="card">
                         <HBox alignment="CENTER" styleClass="search-bar" spacing="10">
-                            <TextField fx:id="searchField" promptText="Search by description" HBox.hgrow="ALWAYS" />
-                            <Button text="Search" />
+                            <TextField fx:id="searchField" promptText="Search by name or phone" HBox.hgrow="ALWAYS" />
+                            <Button onAction="#search" text="Search" />
                         </HBox>
-                        <TableView fx:id="consultationTable" VBox.vgrow="ALWAYS">
+                        <TableView fx:id="patientTable" VBox.vgrow="ALWAYS">
                             <columns>
                                 <TableColumn fx:id="idCol" prefWidth="60.0" text="ID" />
-                                <TableColumn fx:id="dateCol" prefWidth="100.0" text="Date" />
-                                <TableColumn fx:id="descriptionCol" prefWidth="150.0" text="Description" />
-                                <TableColumn fx:id="patientCol" prefWidth="150.0" text="Patient" />
+                                <TableColumn fx:id="nomCol" prefWidth="110.0" text="Nom" />
+                                <TableColumn fx:id="prenomCol" prefWidth="110.0" text="Prénom" />
+                                <TableColumn fx:id="telCol" prefWidth="150.0" text="Tel" />
                             </columns>
                             <columnResizePolicy>
                                 <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />

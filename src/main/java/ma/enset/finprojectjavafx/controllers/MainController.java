@@ -22,7 +22,7 @@ public class MainController {
     private void loadPatientsView() {
         try {
             // Load the Patients view FXML file
-            Parent patientsView = FXMLLoader.load(MainController.class.getResource("/ma/enset/finprojectjavafx/view.fxml")); // Assuming patients-view.fxml is in the same package
+            Parent patientsView = FXMLLoader.load(MainController.class.getResource("/ma/enset/finprojectjavafx/patient.fxml")); // Assuming patients-patient.fxml is in the same package
             contentArea.getChildren().setAll(patientsView); // Set the loaded view as the content of contentArea
         } catch (IOException e) {
             System.out.println(e.getMessage()); // Handle exception properly in a real application
@@ -34,7 +34,7 @@ public class MainController {
     private void loadConsultationsView() {
         try {
             // Load the Consultations view FXML file
-            Parent consultationsView = FXMLLoader.load(MainController.class.getResource("/ma/enset/finprojectjavafx/consultation.fxml")); // Assuming consultations-view.fxml is in the same package
+            Parent consultationsView = FXMLLoader.load(MainController.class.getResource("/ma/enset/finprojectjavafx/consultation.fxml")); // Assuming consultations-patient.fxml is in the same package
             contentArea.getChildren().setAll(consultationsView); // Set the loaded view as the content of contentArea
         } catch (IOException e) {
             e.printStackTrace(); // Handle exception properly in a real application
