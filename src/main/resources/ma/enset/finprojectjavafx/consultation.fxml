@@ -84,8 +84,8 @@
                 <VBox HBox.hgrow="ALWAYS" spacing="0">
                     <VBox styleClass="card">
                         <HBox alignment="CENTER" styleClass="search-bar" spacing="10">
-                            <TextField fx:id="searchField" promptText="Search by description" HBox.hgrow="ALWAYS" />
-                            <Button text="Search" />
+                            <TextField fx:id="searchField" promptText="Search by description" HBox.hgrow="ALWAYS"  />
+                            <Button text="Search" onAction="#search" />
                         </HBox>
                         <TableView fx:id="consultationTable" VBox.vgrow="ALWAYS">
                             <columns>
